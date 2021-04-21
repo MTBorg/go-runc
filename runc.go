@@ -513,6 +513,11 @@ func PreDump(args []string) []string {
 	return append(args, "--pre-dump")
 }
 
+// AutoDedup enables auto deduplication of memory images
+func AutoDedup(args []string) []string {
+	return append(args, "--auto-dedup")
+}
+
 // Checkpoint allows you to checkpoint a container using criu
 func (r *Runc) Checkpoint(context context.Context, id string, opts *CheckpointOpts, actions ...CheckpointAction) error {
 	args := []string{"checkpoint"}
